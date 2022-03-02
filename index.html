@@ -9,14 +9,49 @@
 	<body>
 		<label for="str">Enter your string</label>
 		<input type="text" id="str" />
-		<div id="reverse-str"></div>
-		<script>
-			document.getElementById("str").onkeyup = function () {
+
+		<h2>Approch 1</h2>
+		<code>
+			document.getElementById("str").onchange = function () {
+				// Approch 1
 				let str = document.getElementById("str").value;
 				let new_str = Array();
 				str.split("").map((i) => new_str.unshift(i));
 				new_str = new_str.join("");
-				document.getElementById("reverse-str").innerText = new_str;
+				console.log(new_str);
+				document.getElementById("reverse-str1").innerText = new_str;
+			};
+		</code>
+		<p><strong id="reverse-str1"></strong></p>
+		<hr />
+		<h2>Approch 2</h2>
+		<code>
+			document.getElementById("str").onchange = function () {
+				// Approch 2
+				let n = "";
+				for (let i = str.length - 1; i >= 0; i--) {
+					n += str[i];
+				}
+				document.getElementById("reverse-str2").innerText = n;
+			};
+		</code>
+		<p><strong id="reverse-str2"></strong></p>
+		<script>
+			document.getElementById("str").onchange = function () {
+				// Approch 1
+				let str = document.getElementById("str").value;
+				let new_str = Array();
+				str.split("").map((i) => new_str.unshift(i));
+				new_str = new_str.join("");
+				console.log(new_str);
+				document.getElementById("reverse-str1").innerText = new_str;
+
+				// Approch 2
+				let n = "";
+				for (let i = str.length - 1; i >= 0; i--) {
+					n += str[i];
+				}
+				document.getElementById("reverse-str2").innerText = n;
 			};
 		</script>
 	</body>
